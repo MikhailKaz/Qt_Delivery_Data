@@ -47,9 +47,9 @@ void MainWindow::createUI()
     /*QModelIndex index = model->index(1,1);
     QString text = index.data().toString();*/
 
-    qDebug()<<model->select();
+    /*qDebug()<<model->select();
     qDebug()<<model->columnCount()<< " " << model->rowCount();
-    qDebug()<<index.isValid()<<text;
+    qDebug()<<index.isValid()<<text;*/
 
     for(int i = 0; i < 6; i++){
         ui->tableView->setColumnWidth(i,200);
