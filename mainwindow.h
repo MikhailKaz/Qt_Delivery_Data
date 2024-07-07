@@ -5,6 +5,11 @@
 #include <QSqlTableModel>
 #include <map>
 
+//
+#include <QTableView>
+#include <QStandardItemModel>
+//
+
 /* Подключаем заголовочный файл для работы с информацией, которая помещена в базу данных */
 #include "database.h"
 

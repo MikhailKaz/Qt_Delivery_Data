@@ -44,15 +44,18 @@ void MainWindow::createUI()
     ui->tableView->setColumnHidden(0, true);// Скрываем колонку с id записей
     ui->Table_name->setText(db->table_name[counter]);
 
-    /*QModelIndex index = model->index(1,1);
-    QString text = index.data().toString();*/
+    QStandardItemModel* modelInput = new QStandardItemModel(1, model->columnCount()-1);
+    ui->tableView_2->setModel(modelInput);
 
-    /*qDebug()<<model->select();
-    qDebug()<<model->columnCount()<< " " << model->rowCount();
-    qDebug()<<index.isValid()<<text;*/
+    for(int i = 1; i < model->columnCount(); i++){
+        modelInput->setHorizontalHeaderItem(i-1, new QStandardItem(model->headerData(i,Qt::Horizontal).toString()));
+    }
+
 
     for(int i = 0; i < 6; i++){
         ui->tableView->setColumnWidth(i,200);
+        ui->tableView_2->setColumnWidth(i,200);
+
     }
 
     model->select(); // Делаем выборку данных из таблицы
