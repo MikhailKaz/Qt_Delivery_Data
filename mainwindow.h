@@ -43,6 +43,7 @@ private:
      * */
     DataBase        *db;
     QSqlTableModel  *model;
+    QStandardItemModel *modelInput;
 
 private:
     /* Также присутствуют два метода, которые формируют модель

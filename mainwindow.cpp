@@ -55,8 +55,6 @@ void MainWindow::createUI()
         ui->tableView->setColumnWidth(i,200);
         ui->tableView_2->setColumnWidth(i,200);
     }
-    /*modelInput->headerData(1,1,);
-    qDebug() << modelInput->takeItem(1,1);*/
 
     model->select(); // Делаем выборку данных из таблицы
 }
@@ -81,28 +79,7 @@ void MainWindow::Back_clicked()
 
 void MainWindow::Insert_clicked()
 {
-    QString tmp = "", string = ui->Input->text();
-    std::vector <QString> inp, name_culumn;
-
-    for(int i = 0; i < model->columnCount(); i++){
-        name_culumn.push_back("\"" + model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString()+ "\"");
-    }
-
-    for(int j = 0; j < string.size(); j++){ // обработка ввода
-
-        if(string[j] != ','){
-            tmp += string[j];
-        }
-        else{
-            inp.push_back(tmp);
-            tmp = "";
-        }
-        if(j+1 == string.size()){
-            inp.push_back(tmp);
-        }
-    }
-
-    db->insert(counter, name_culumn, inp); // номер таблицы, ввод
+    //qDebug() << modelInput->takeItem(1,0)->text(); // вот эту хуйню раскомитьеть добавить поле в классе
 
     setupModel(db->table_name[counter]);
     createUI();
