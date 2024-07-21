@@ -34,8 +34,8 @@ public:
      * Подключение к базе данных и вставка записей в таблицу
      * */
     void connectToDataBase();
-    void insert(int counter, std::vector <QString> name_culumn, std::vector <QString> inp);
-    void delet_e(int num, int counter);
+    void insert(int counter, QVector <QString> name_culumn, QVector <QString> inp);
+    void delet_e(int num, QString nameColumn);
 
 private:
     // Сам объект базы данных, с которым будет производиться работа
@@ -51,7 +51,7 @@ private:
 
 public:
 
-    std::map <int, QString> table_name; // Названия вызываемых таблиц, мб их можно как-то считать с db но мне лень разбираться:/
+    std::map <int, QString> table_name; // Названия выываемых таблиц (vector)
 
 };
 

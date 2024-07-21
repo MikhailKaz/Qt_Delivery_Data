@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->Insert,SIGNAL(clicked()),this,SLOT(Insert_clicked()));
     connect(ui->Delete,SIGNAL(clicked()),this,SLOT(Delete_clicked()));
 
+    ui->lineEdit->setAlignment(Qt::AlignCenter);
+
 }
 
 /* Метод для инициализации модели представления данных
@@ -39,7 +41,7 @@ void MainWindow::setupModel(QString tableName)
 
 void MainWindow::createUI()
 {
-    QStandardItemModel* modelInput = new QStandardItemModel(1, model->columnCount()-1);
+    modelInput = new QStandardItemModel(1, model->columnCount()-1);
 
     ui->tableView->setModel(model); // Устанавливаем модель на TableView
     ui->tableView_2->setModel(modelInput);
@@ -64,6 +66,7 @@ void MainWindow::Next_clicked()
     if (counter < 5){
         counter++;
     }
+
     setupModel(db->table_name[counter]);
     createUI();
 }
@@ -79,15 +82,27 @@ void MainWindow::Back_clicked()
 
 void MainWindow::Insert_clicked()
 {
-    //qDebug() << modelInput->takeItem(1,0)->text(); // вот эту хуйню раскомитьеть добавить поле в классе
+    // надо передать 2 вектора 1) с именами колонок 2) с параметрами
+    QVector <QString> nameColumn, argInsert;
 
+    for(int i = 0; i < model->columnCount(); i++){ // i = 1 потому что 1 колонка ID
+        nameColumn.push_back(model->headerData(i,Qt::Horizontal).toString());
+        if(i == 0){
+            argInsert.push_back(QString::number(model->rowCount()+1)); // добавляем номер строки для INSERT
+        }
+        else{
+            argInsert.push_back(modelInput->data(modelInput->index(0,i-1),Qt::DisplayRole).toString()); // добавляем входные данные с таблицы
+        }
+    }
+
+    db->insert(counter, nameColumn, argInsert);
     setupModel(db->table_name[counter]);
     createUI();
 }
 
 void MainWindow::Delete_clicked()
 {
-    db->delet_e(ui->Input_2->text().toInt(), counter);
+    db->delet_e(ui->lineEdit->text().toInt(), db->table_name[counter]); // передаём номер номер row и имя таблицы для удаления
     setupModel(db->table_name[counter]);
     createUI();
 }

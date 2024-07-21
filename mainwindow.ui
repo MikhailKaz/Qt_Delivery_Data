@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1062</width>
-    <height>762</height>
+    <height>660</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="Next">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>510</y>
+      <x>300</x>
+      <y>490</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -43,8 +43,8 @@
    <widget class="QPushButton" name="Back">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>510</y>
+      <x>160</x>
+      <y>490</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -56,8 +56,8 @@
    <widget class="QPushButton" name="Insert">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>570</y>
+      <x>790</x>
+      <y>490</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -66,34 +66,11 @@
      <string>Insert</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="Input">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>580</y>
-      <width>191</width>
-      <height>21</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>590</y>
-      <width>111</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>String : 'Address'</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="Delete">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>630</y>
+      <x>650</x>
+      <y>490</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -102,21 +79,11 @@
      <string>Delete</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="Input_2">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>640</y>
-      <width>191</width>
-      <height>21</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="Table_name">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>0</y>
+      <x>510</x>
+      <y>10</y>
       <width>151</width>
       <height>18</height>
      </rect>
@@ -149,6 +116,22 @@
     <attribute name="horizontalHeaderStretchLastSection">
      <bool>false</bool>
     </attribute>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>572</x>
+      <y>500</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

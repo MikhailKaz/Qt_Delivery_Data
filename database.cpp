@@ -53,7 +53,7 @@ bool DataBase::openDataBase()
     }
 }
 
-void DataBase::insert(int counter, std::vector <QString> name_culumn, std::vector <QString> inp) { // counter - номер текущей таблицы
+void DataBase::insert(int counter, QVector <QString> name_culumn, QVector <QString> inp) { // counter - номер текущей таблицы
 
     QString quer_y;
     QSqlQuery query;
@@ -64,7 +64,8 @@ void DataBase::insert(int counter, std::vector <QString> name_culumn, std::vecto
         if(i != 0){
             quer_y += ", ";
         }
-        quer_y +=  name_culumn[i];
+
+        quer_y +=  "\"" + name_culumn[i] + "\"";
 
     }
     quer_y += ") VALUES (";
@@ -88,11 +89,11 @@ void DataBase::insert(int counter, std::vector <QString> name_culumn, std::vecto
 
 }
 
-void DataBase::delet_e(int num, int counter){
+void DataBase::delet_e(int num, QString nameColumn){
 
     QSqlQuery query;
     QString quer_y;
-    quer_y = "DELETE FROM \"" + table_name[counter] + "\"";
+    quer_y = "DELETE FROM \"" + nameColumn + "\"";
     quer_y += " WHERE \"ID\" = " + QString::number(num);
     query.exec(quer_y);
 

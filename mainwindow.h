@@ -52,7 +52,7 @@ private:
     void setupModel(QString tableName);
     void createUI();
 
-private: // ну а дальше бага нет, есть только мой гавнокод
+private:
     int counter = 0; // счётчик для выбора таблицы
 
 };
