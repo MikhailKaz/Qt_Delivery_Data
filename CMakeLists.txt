@@ -40,6 +40,7 @@ else()
             ${PROJECT_SOURCES}
             database.h
             database.cpp
+            smartqueries.h smartqueries.cpp smartqueries.ui
         )
     endif()
 endif()

@@ -98,5 +98,8 @@ void DataBase::delet_e(int num, QString nameColumn){
     query.exec(quer_y);
 
 }
-//query.exec("DELETE FROM \"Client\" WHERE \"ID\" = 6");
-//query.exec("INSERT INTO \"Client\" (\"ID\",\"Phone_number\", \"Address\") VALUES (8,999, 'Name')");
+
+// quer_y = "...";
+// query.exec(quer_y);
+// query.exec("DELETE FROM \"Client\" WHERE \"ID\" = 6");
+// query.exec("INSERT INTO \"Client\" (\"ID\",\"Phone_number\", \"Address\") VALUES (8,999, 'Name')");

@@ -106,3 +106,10 @@ void MainWindow::Delete_clicked()
     setupModel(db->table_name[counter]);
     createUI();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    windSmartQuer.setModal(true);
+    windSmartQuer.show();
+}
+

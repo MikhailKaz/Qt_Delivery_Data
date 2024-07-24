@@ -5,13 +5,10 @@
 #include <QSqlTableModel>
 #include <map>
 
-//
-#include <QTableView>
 #include <QStandardItemModel>
-//
 
-/* Подключаем заголовочный файл для работы с информацией, которая помещена в базу данных */
 #include "database.h"
+#include "smartqueries.h"
 
 namespace Ui {
 class MainWindow;
@@ -36,6 +33,8 @@ private slots:
 
     void Delete_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow  *ui;
     /* В проекте используются объекты для взаимодействия с информацией в базе данных
@@ -44,6 +43,7 @@ private:
     DataBase        *db;
     QSqlTableModel  *model;
     QStandardItemModel *modelInput;
+    SmartQueries windSmartQuer;
 
 private:
     /* Также присутствуют два метода, которые формируют модель

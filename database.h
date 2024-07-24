@@ -14,16 +14,6 @@
 
 /* Директивы имен таблицы, полей таблицы и базы данных */
 
-#define TABLE                   "Client"
-#define TABLE_ID                "ID"
-#define TABLE_NUMBER            "Phone_number"
-#define TABLE_ADDRESS           "Address"
-
-#define TABLE_DATE              "Date"
-#define TABLE_TIME              "Time"
-#define TABLE_MESSAGE           "Message"
-#define TABLE_RANDOM            "Random"
-
 class DataBase : public QObject
 {
     Q_OBJECT

@@ -129,8 +129,21 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <bold>true</bold>
+      <bold>false</bold>
      </font>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>30</y>
+      <width>101</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Smart queries</string>
     </property>
    </widget>
   </widget>
