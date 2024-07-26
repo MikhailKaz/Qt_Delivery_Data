@@ -17,9 +17,11 @@ class SmartQueries : public QDialog
 public:
     explicit SmartQueries(QWidget *parent = nullptr);
     ~SmartQueries();
+    void execut();
 
 private:
     Ui::SmartQueries *ui;
+    DataBase *db;
 };
 
 #endif // SMARTQUERIES_H

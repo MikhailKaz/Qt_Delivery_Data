@@ -18,16 +18,25 @@ class DataBase : public QObject
 {
     Q_OBJECT
 public:
-    explicit DataBase(QObject *parent = 0);
-    ~DataBase();
+
     /* Методы для непосредственной работы с классом
      * Подключение к базе данных и вставка записей в таблицу
      * */
+    static DataBase *get_db(){ // singleton
+        static DataBase *db;
+        if(!db){
+            db = new DataBase();
+        }
+        return db;
+    }
+
     void connectToDataBase();
     void insert(int counter, QVector <QString> name_culumn, QVector <QString> inp);
     void delet_e(int num, QString nameColumn);
 
 private:
+    DataBase(QObject *parent = 0); // singleton
+    ~DataBase();
     // Сам объект базы данных, с которым будет производиться работа
     QSqlDatabase db;
 

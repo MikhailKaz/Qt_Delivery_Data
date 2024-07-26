@@ -12,7 +12,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     /* Первым делом необходимо создать объект, который будет использоваться для работы с данными нашей БД
      * и инициализировать подключение к базе данных
      * */
-    db = new DataBase();
+    //db = new DataBase();
+
+    db = DataBase::get_db();
+
     db->connectToDataBase();
 
     setupModel(db->table_name[counter]); // передаём в функцию имя столбца для обработки
@@ -110,6 +113,7 @@ void MainWindow::Delete_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     windSmartQuer.setModal(true);
+    windSmartQuer.execut();
     windSmartQuer.show();
 }
 

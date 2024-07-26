@@ -40,10 +40,10 @@ private:
     /* В проекте используются объекты для взаимодействия с информацией в базе данных
      * и моделью представления таблицы базы данных
      * */
-    DataBase        *db;
     QSqlTableModel  *model;
     QStandardItemModel *modelInput;
     SmartQueries windSmartQuer;
+    DataBase *db;
 
 private:
     /* Также присутствуют два метода, которые формируют модель
