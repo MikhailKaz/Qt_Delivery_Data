@@ -4,13 +4,11 @@
 #include <QObject>
 #include <QSql>
 #include <QSqlQuery>
-#include <QSqlError>
 #include <QSqlDatabase>
-#include <QFile>
-#include <QDate>
 #include <QDebug>
 #include <QString>
-#include <vector>
+#include <QStandardItemModel>
+#include <QSqlTableModel>
 
 /* Директивы имен таблицы, полей таблицы и базы данных */
 
@@ -33,6 +31,7 @@ public:
     void connectToDataBase();
     void insert(int counter, QVector <QString> name_culumn, QVector <QString> inp);
     void delet_e(int num, QString nameColumn);
+    void smartOne();
 
 private:
     DataBase(QObject *parent = 0); // singleton
@@ -41,8 +40,6 @@ private:
     QSqlDatabase db;
 
 private:
-    /* Внутренние методы для работы с базой данных
-     * */
     bool openDataBase();
     bool restoreDataBase();
     void closeDataBase();
@@ -50,7 +47,7 @@ private:
 
 public:
 
-    std::map <int, QString> table_name; // Названия выываемых таблиц (vector)
+    std::map <int, QString> table_name; // Названия вызваемых таблиц
 
 };
 

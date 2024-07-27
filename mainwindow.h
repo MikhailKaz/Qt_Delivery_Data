@@ -2,10 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QSqlTableModel>
 #include <map>
-
-#include <QStandardItemModel>
 
 #include "database.h"
 #include "smartqueries.h"

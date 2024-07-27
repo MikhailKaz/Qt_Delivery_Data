@@ -18,8 +18,9 @@ SmartQueries::~SmartQueries()
 
 void SmartQueries::execut(){
 
-    QSqlQuery query;
+    db->smartOne();
+    /*QSqlQuery query;
     QString quer_y;
     quer_y = "INSERT INTO \"Client\" (\"ID\",\"Phone_number\", \"Address\") VALUES (6,999, 'Name')";
-    query.exec(quer_y);
+    query.exec(quer_y);*/
 }

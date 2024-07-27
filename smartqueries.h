@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include <QSqlQuery>
-
 #include "database.h"
 
 namespace Ui {

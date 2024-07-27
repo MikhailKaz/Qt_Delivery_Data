@@ -14,7 +14,7 @@ DataBase::DataBase(QObject *parent) : QObject(parent)
     table_name[2] = "Delivery_history";
     table_name[3] = "Order";
     table_name[4] = "Order_list";
-    table_name[5] = "Restaurants";
+    table_name[5] = "Restaurants"; 
 
 }
 
@@ -96,6 +96,17 @@ void DataBase::delet_e(int num, QString nameColumn){
     quer_y = "DELETE FROM \"" + nameColumn + "\"";
     quer_y += " WHERE \"ID\" = " + QString::number(num);
     query.exec(quer_y);
+
+}
+
+void DataBase::smartOne(){
+
+    QSqlQuery query;
+    QString quer_y = "SELECT COUNT(*) FROM \"" + table_name[2] + "\"";
+    qDebug() << quer_y;
+    qDebug() << query.exec(quer_y);
+    query.next();
+    qDebug() << query.value(0).toInt();
 
 }
 
