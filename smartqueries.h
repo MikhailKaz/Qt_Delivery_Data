@@ -21,6 +21,13 @@ public:
 private:
     Ui::SmartQueries *ui;
     DataBase *db;
+    std::map <int, QString> table_name;
+    qint16 columnNum = 0;
+
+private slots:
+    void Next_clicked();
+    void Back_clicked();
+
 };
 
 #endif // SMARTQUERIES_H

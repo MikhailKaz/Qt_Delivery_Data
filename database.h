@@ -31,7 +31,15 @@ public:
     void connectToDataBase();
     void insert(int counter, QVector <QString> name_culumn, QVector <QString> inp);
     void delet_e(int num, QString nameColumn);
-    void smartOne();
+
+    QSqlQueryModel *smartOne();
+    QSqlQueryModel *smartSecond();
+    QSqlQueryModel *smartThird();
+    QSqlQueryModel *smartFourth();
+    QSqlQueryModel *smartFifth();
+    QSqlQueryModel *smartSixth();
+    QSqlQueryModel *smartSeventh();
+    QSqlQueryModel *smartEighth();
 
 private:
     DataBase(QObject *parent = 0); // singleton
